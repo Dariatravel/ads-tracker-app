@@ -5,7 +5,7 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 ENV ADS_TRACKER_DATA_DIR=/data
 
-COPY app.py README.md /app/
+COPY app.py README.md seed_data.json /app/
 
 EXPOSE 8080
 
