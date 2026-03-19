@@ -1729,7 +1729,26 @@ def update_campaign(campaign_id: int, payload: Dict[str, Any]) -> Dict[str, Any]
 class AdsTrackerHandler(BaseHTTPRequestHandler):
     server_version = "AdsTracker/2.0"
 
+    def do_HEAD(self) -> None:
+        ensure_db()
+        parsed = urlparse(self.path)
+        if parsed.path == "/healthz":
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        if parsed.path == "/":
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        self.send_response(HTTPStatus.NOT_FOUND)
+        self.end_headers()
+
     def do_GET(self) -> None:
+        ensure_db()
         parsed = urlparse(self.path)
         if parsed.path == "/":
             self.respond_html(HTML_PAGE)
@@ -1748,6 +1767,7 @@ class AdsTrackerHandler(BaseHTTPRequestHandler):
         self.respond_json({"error": "Маршрут не найден."}, status=HTTPStatus.NOT_FOUND)
 
     def do_POST(self) -> None:
+        ensure_db()
         try:
             payload = parse_json_payload(self)
             if self.path == "/api/outlets":
@@ -1763,6 +1783,7 @@ class AdsTrackerHandler(BaseHTTPRequestHandler):
             self.respond_json({"error": f"Внутренняя ошибка: {exc}"}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
 
     def do_PATCH(self) -> None:
+        ensure_db()
         parsed = urlparse(self.path)
         parts = [part for part in parsed.path.split("/") if part]
         try:
