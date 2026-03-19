@@ -24,6 +24,7 @@ DATA_DIR = Path(
     )
 )
 DB_PATH = DATA_DIR / "ads_tracker.db"
+SEED_DATA_PATH = APP_DIR / "seed_data.json"
 HOST = os.getenv("ADS_TRACKER_HOST", "127.0.0.1")
 PORT = int(os.getenv("PORT", os.getenv("ADS_TRACKER_PORT", "8765")))
 
@@ -1035,7 +1036,86 @@ def ensure_db() -> None:
             conn.execute("ALTER TABLE campaigns ADD COLUMN posting_mode TEXT NOT NULL DEFAULT 'daily_month_cap'")
         if "paid_until" not in campaign_columns:
             conn.execute("ALTER TABLE campaigns ADD COLUMN paid_until TEXT")
+        seed_if_empty(conn)
         conn.commit()
+
+
+def seed_if_empty(conn: sqlite3.Connection) -> None:
+    if not SEED_DATA_PATH.exists():
+        return
+
+    outlets_count = conn.execute("SELECT COUNT(*) FROM outlets").fetchone()[0]
+    campaigns_count = conn.execute("SELECT COUNT(*) FROM campaigns").fetchone()[0]
+    pin_posts_count = conn.execute("SELECT COUNT(*) FROM pin_posts").fetchone()[0]
+    if outlets_count or campaigns_count or pin_posts_count:
+        return
+
+    payload = json.loads(SEED_DATA_PATH.read_text(encoding="utf-8"))
+
+    for outlet in payload.get("outlets", []):
+        conn.execute(
+            """
+            INSERT INTO outlets(id, platform, name, link, ad_format, manager_name, manager_link, notes, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                outlet.get("id"),
+                outlet.get("platform"),
+                outlet.get("name"),
+                outlet.get("link"),
+                outlet.get("ad_format"),
+                outlet.get("manager_name"),
+                outlet.get("manager_link"),
+                outlet.get("notes"),
+                outlet.get("created_at"),
+            ),
+        )
+
+    for campaign in payload.get("campaigns", []):
+        conn.execute(
+            """
+            INSERT INTO campaigns(
+                id, outlet_id, year, start_date, end_date, posting_mode,
+                posts_per_month, paid_status, paid_until, placed_until, comment, created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                campaign.get("id"),
+                campaign.get("outlet_id"),
+                campaign.get("year"),
+                campaign.get("start_date"),
+                campaign.get("end_date"),
+                campaign.get("posting_mode") or "daily_month_cap",
+                campaign.get("posts_per_month") or 30,
+                campaign.get("paid_status") or "не оплачено",
+                campaign.get("paid_until"),
+                campaign.get("placed_until"),
+                campaign.get("comment"),
+                campaign.get("created_at"),
+            ),
+        )
+
+    for pin_post in payload.get("pin_posts", []):
+        conn.execute(
+            """
+            INSERT INTO pin_posts(
+                id, outlet_id, title, paid_status, last_updated,
+                remind_every_days, note, created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                pin_post.get("id"),
+                pin_post.get("outlet_id"),
+                pin_post.get("title") or "Закреп",
+                pin_post.get("paid_status") or "оплачено",
+                pin_post.get("last_updated"),
+                pin_post.get("remind_every_days") or 14,
+                pin_post.get("note"),
+                pin_post.get("created_at"),
+            ),
+        )
 
 
 def db_connection() -> sqlite3.Connection:

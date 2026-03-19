@@ -1,0 +1,200 @@
+{
+  "outlets": [
+    {
+      "id": 2,
+      "platform": "VK",
+      "name": "Жильё в Абхазии",
+      "link": "https://vk.com/rentabhazia",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "manager_name": "Мария Левина",
+      "manager_link": "https://vk.com/levinamur"
+    },
+    {
+      "id": 3,
+      "platform": "VK",
+      "name": "Отдых в Абхазии",
+      "link": "https://vk.com/lovabhazia",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "manager_name": "Мария Левина",
+      "manager_link": "https://vk.com/levinamur"
+    },
+    {
+      "id": 4,
+      "platform": "VK",
+      "name": "Жильё на Море",
+      "link": "https://vk.com/rentblacksea",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "manager_name": "Мария Левина",
+      "manager_link": "https://vk.com/levinamur"
+    },
+    {
+      "id": 5,
+      "platform": "Max",
+      "name": "Жильё в Абхазии",
+      "link": "https://max.ru/rentabhazia",
+      "ad_format": "Посты",
+      "default_cost": null,
+      "notes": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "manager_name": "Мария Левина",
+      "manager_link": "https://vk.com/levinamur"
+    },
+    {
+      "id": 6,
+      "platform": "Max",
+      "name": "Жильё на Море",
+      "link": "https://max.ru/rentblacksea",
+      "ad_format": "Посты",
+      "default_cost": null,
+      "notes": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "manager_name": "Мария Левина",
+      "manager_link": "https://vk.com/levinamur"
+    },
+    {
+      "id": 7,
+      "platform": "VK",
+      "name": "Абхазия . Жильё Море Отдых",
+      "link": "https://vk.com/club195563002",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Ежедневно без пропусков",
+      "created_at": "2026-03-19 10:21:12",
+      "manager_name": "Наталья Апсны",
+      "manager_link": "https://vk.com/id481710006"
+    },
+    {
+      "id": 8,
+      "platform": "VK",
+      "name": "Абхазия Отдых Экскурсии Джиппинг В / По Абхазии",
+      "link": "https://vk.com/club163726300",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Ежедневно без пропусков",
+      "created_at": "2026-03-19 10:21:12",
+      "manager_name": "Наталья Апсны",
+      "manager_link": "https://vk.com/id481710006"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": 1,
+      "outlet_id": 2,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-08-31",
+      "posts_per_month": 30,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-20",
+      "comment": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "posting_mode": "daily_month_cap",
+      "paid_until": "2026-08-31"
+    },
+    {
+      "id": 2,
+      "outlet_id": 3,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-08-31",
+      "posts_per_month": 30,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-20",
+      "comment": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "posting_mode": "daily_month_cap",
+      "paid_until": "2026-08-31"
+    },
+    {
+      "id": 3,
+      "outlet_id": 4,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-08-31",
+      "posts_per_month": 30,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-20",
+      "comment": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "posting_mode": "daily_month_cap",
+      "paid_until": "2026-08-31"
+    },
+    {
+      "id": 4,
+      "outlet_id": 5,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-08-31",
+      "posts_per_month": 30,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-19",
+      "comment": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "posting_mode": "daily_month_cap",
+      "paid_until": "2026-08-31"
+    },
+    {
+      "id": 5,
+      "outlet_id": 6,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-08-31",
+      "posts_per_month": 30,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-19",
+      "comment": "Ежедневно, но не больше 30 постов в месяц",
+      "created_at": "2026-03-19 09:36:58",
+      "posting_mode": "daily_month_cap",
+      "paid_until": "2026-08-31"
+    },
+    {
+      "id": 6,
+      "outlet_id": 7,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-22",
+      "posts_per_month": 31,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-22",
+      "comment": "Ежедневно без пропусков",
+      "created_at": "2026-03-19 10:21:12",
+      "posting_mode": "daily_full",
+      "paid_until": "2026-03-22"
+    },
+    {
+      "id": 7,
+      "outlet_id": 8,
+      "year": 2026,
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-22",
+      "posts_per_month": 31,
+      "paid_status": "оплачено",
+      "placed_until": "2026-03-22",
+      "comment": "Ежедневно без пропусков",
+      "created_at": "2026-03-19 10:21:12",
+      "posting_mode": "daily_full",
+      "paid_until": "2026-03-22"
+    }
+  ],
+  "pin_posts": [
+    {
+      "id": 1,
+      "outlet_id": 7,
+      "title": "Закреп",
+      "paid_status": "оплачено",
+      "last_updated": "2026-03-01",
+      "remind_every_days": 14,
+      "note": "Оплачен закреп. Напомнить обновить каждые 14 дней.",
+      "created_at": "2026-03-19 10:42:05"
+    }
+  ]
+}
