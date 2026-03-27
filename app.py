@@ -554,6 +554,7 @@ HTML_PAGE = """<!doctype html>
               <select id="postingMode" name="posting_mode" required>
                 <option value="daily_month_cap">Ежедневно, но с лимитом в месяц</option>
                 <option value="daily_full">Ежедневно без пропусков</option>
+                <option value="every_3_days">1 пост раз в 3 дня</option>
               </select>
             </div>
             <div class="field">
@@ -688,6 +689,7 @@ HTML_PAGE = """<!doctype html>
 
     function postingModeLabel(mode, postsPerMonth) {
       if (mode === "daily_full") return "Ежедневно без пропусков";
+      if (mode === "every_3_days") return "1 пост раз в 3 дня";
       return `Ежедневно, до ${postsPerMonth} постов в месяц`;
     }
 
@@ -1185,6 +1187,13 @@ def scheduled_dates(start_iso: str, end_iso: str, posts_per_month: int, posting_
         while current <= end:
             result.append(current)
             current += timedelta(days=1)
+        return result
+
+    if posting_mode == "every_3_days":
+        current = start
+        while current <= end:
+            result.append(current)
+            current += timedelta(days=3)
         return result
 
     for month_start in month_iterator(start, end):
