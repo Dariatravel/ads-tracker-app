@@ -83,6 +83,42 @@
       "created_at": "2026-03-19 10:21:12",
       "manager_name": "Наталья Апсны",
       "manager_link": "https://vk.com/id481710006"
+    },
+    {
+      "id": 9,
+      "platform": "VK",
+      "name": "otdyh_tur",
+      "link": "https://vk.com/otdyh_tur",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Оплаченный блок: 10 постов, 1 пост раз в 3 дня",
+      "created_at": "2026-03-27 17:21:58",
+      "manager_name": "styoparu",
+      "manager_link": "https://vk.com/styoparu"
+    },
+    {
+      "id": 10,
+      "platform": "VK",
+      "name": "public149184572",
+      "link": "https://vk.com/public149184572",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Оплаченный блок: 10 постов, 1 пост раз в 3 дня",
+      "created_at": "2026-03-27 17:21:58",
+      "manager_name": "styoparu",
+      "manager_link": "https://vk.com/styoparu"
+    },
+    {
+      "id": 11,
+      "platform": "VK",
+      "name": "zhilyo_namore",
+      "link": "https://vk.com/zhilyo_namore",
+      "ad_format": "Посты в группе",
+      "default_cost": null,
+      "notes": "Оплаченный блок: 10 постов, 1 пост раз в 3 дня",
+      "created_at": "2026-03-27 17:21:58",
+      "manager_name": "styoparu",
+      "manager_link": "https://vk.com/styoparu"
     }
   ],
   "campaigns": [
@@ -183,6 +219,48 @@
       "created_at": "2026-03-19 10:21:12",
       "posting_mode": "daily_full",
       "paid_until": "2026-03-22"
+    },
+    {
+      "id": 8,
+      "outlet_id": 9,
+      "year": 2026,
+      "start_date": "2026-03-27",
+      "end_date": "2026-04-23",
+      "posts_per_month": 10,
+      "paid_status": "оплачено",
+      "placed_until": null,
+      "comment": "Оплаченный блок: 10 постов, 1 пост раз в 3 дня",
+      "created_at": "2026-03-27 17:21:58",
+      "posting_mode": "every_3_days",
+      "paid_until": "2026-04-23"
+    },
+    {
+      "id": 9,
+      "outlet_id": 10,
+      "year": 2026,
+      "start_date": "2026-03-27",
+      "end_date": "2026-04-23",
+      "posts_per_month": 10,
+      "paid_status": "оплачено",
+      "placed_until": null,
+      "comment": "Оплаченный блок: 10 постов, 1 пост раз в 3 дня",
+      "created_at": "2026-03-27 17:21:58",
+      "posting_mode": "every_3_days",
+      "paid_until": "2026-04-23"
+    },
+    {
+      "id": 10,
+      "outlet_id": 11,
+      "year": 2026,
+      "start_date": "2026-03-27",
+      "end_date": "2026-04-23",
+      "posts_per_month": 10,
+      "paid_status": "оплачено",
+      "placed_until": null,
+      "comment": "Оплаченный блок: 10 постов, 1 пост раз в 3 дня",
+      "created_at": "2026-03-27 17:21:58",
+      "posting_mode": "every_3_days",
+      "paid_until": "2026-04-23"
     }
   ],
   "pin_posts": [
